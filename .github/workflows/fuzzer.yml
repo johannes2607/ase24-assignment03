@@ -26,7 +26,7 @@ jobs:
       - name: Compile Java Sources
         run: |
           mkdir -p build
-          javac -d build $(find src -name "*.java")
+          javac -d build $(find . -name "*.java")
 
       - name: Run Fuzzer
         run: |
