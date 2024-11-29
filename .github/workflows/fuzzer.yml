@@ -30,4 +30,4 @@ jobs:
 
       - name: Run Fuzzer
         run: |
-          java -cp build your.package.MainFuzzerClass
+          java -cp build your.package.Fuzzer
