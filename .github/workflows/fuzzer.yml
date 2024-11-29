@@ -22,7 +22,12 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          cache: maven
 
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+      - name: Compile Java Sources
+        run: |
+          mkdir -p build
+          javac -d build $(find src -name "*.java")
+
+      - name: Run Fuzzer
+        run: |
+          java -cp build your.package.MainFuzzerClass
